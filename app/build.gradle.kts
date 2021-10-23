@@ -28,6 +28,10 @@ dependencies {
     implementation("dev.miku:r2dbc-mysql:0.8.2.RELEASE")
     implementation("io.r2dbc:r2dbc-pool:0.8.7.RELEASE")
     runtimeOnly("mysql:mysql-connector-java:8.0.25")
+
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":presentation"))
 }
 
 dependencyManagement {

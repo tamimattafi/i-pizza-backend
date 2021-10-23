@@ -5,6 +5,7 @@ import com.tamimattafi.pizza.backend.domain.usecase.PizzaGet
 import com.tamimattafi.pizza.backend.domain.usecase.PizzaGetPage
 import com.tamimattafi.pizza.backend.presentation.defaults.Pagination.DEFAULT_PAGE_NUMBER_PARAMETER
 import com.tamimattafi.pizza.backend.presentation.defaults.Pagination.DEFAULT_PAGE_SIZE_PARAMETER
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class PizzaController(
+class PizzaController @Autowired constructor(
     private val getPizzaPage: PizzaGetPage,
     private val getPizza: PizzaGet
 ) {
