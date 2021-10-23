@@ -1,4 +1,4 @@
-package com.tamimattafi.pizza.backend
+package com.tamimattafi.pizza.backend.app
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
