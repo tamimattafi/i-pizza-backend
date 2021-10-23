@@ -1,8 +1,6 @@
-plugins {
-    id("org.springframework.boot")
-    id("io.spring.dependency-management")
-    kotlin("plugin.spring")
-}
+apply(plugin = "org.springframework.boot")
+apply(plugin = "io.spring.dependency-management")
+apply(plugin = "org.jetbrains.kotlin.plugin.spring")
 
 group = "com.tamimattafi.pizza.backend"
 version = "0.0.1-SNAPSHOT"
@@ -12,7 +10,7 @@ dependencies {
     //SPRING BOOT
     implementation("org.springframework.boot:spring-boot-starter-security:2.5.5")
     implementation("org.springframework.boot:spring-boot-starter-web:2.5.5")
-    implementation("org.springframework.boot.experimental:spring-boot-starter-data-r2dbc")
+    implementation("org.springframework.boot.experimental:spring-boot-starter-data-r2dbc:0.1.0.M3")
 
     //KOTLIN
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
@@ -27,10 +25,4 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":presentation"))
-}
-
-dependencyManagement {
-    imports {
-        mavenBom("org.springframework.boot.experimental:spring-boot-bom-r2dbc:0.1.0.M3")
-    }
 }

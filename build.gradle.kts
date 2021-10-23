@@ -1,8 +1,12 @@
 plugins {
-	kotlin("jvm") version "1.5.31" apply false
-	kotlin("plugin.spring") version "1.5.31" apply false
-	id("org.springframework.boot") version "2.5.6" apply false
-	id("io.spring.dependency-management") version "1.0.11.RELEASE" apply false
+	kotlin("jvm") version "1.5.31"
+	kotlin("plugin.spring") version "1.5.31"
+	id("org.springframework.boot") version "2.5.6"
+}
+
+repositories {
+	mavenCentral()
+	maven(url = "https://repo.spring.io/milestone")
 }
 
 buildscript {
