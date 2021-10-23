@@ -9,3 +9,9 @@ java.sourceCompatibility = JavaVersion.VERSION_16
 tasks.create("prepareKotlinBuildScriptModel") {
     //workaround to fix build error in gradle 7.0
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "16"
+    }
+}
