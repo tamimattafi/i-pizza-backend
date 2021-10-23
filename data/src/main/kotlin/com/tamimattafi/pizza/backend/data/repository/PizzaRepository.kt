@@ -4,17 +4,28 @@ import com.tamimattafi.pizza.backend.data.local.dao.IPizzaDao
 import com.tamimattafi.pizza.backend.data.local.entity.PizzaConverter
 import com.tamimattafi.pizza.backend.domain.model.Pizza
 import com.tamimattafi.pizza.backend.domain.repository.IPizzaRepository
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.toList
+import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Sort
 
 class PizzaRepository(
     private val pizzaDao: IPizzaDao
 ) : IPizzaRepository {
 
-    override suspend fun getAll(): List<Pizza>
-        = pizzaDao.findAll()
+    override suspend fun getPage(
+        pageNumber: Int,
+        pageSize: Int,
+        sortingProperty: String
+    ): List<Pizza> {
+        val sorting = Sort.by(sortingProperty)
+        val pageable = PageRequest.of(
+            pageNumber,
+            pageSize,
+            sorting
+        )
+
+        return pizzaDao.findAll(pageable)
             .map(PizzaConverter::toPizza)
-            .toList()
+    }
 
     override suspend fun get(id: Int): Pizza?
         = pizzaDao.findById(id)?.let(PizzaConverter::toPizza)

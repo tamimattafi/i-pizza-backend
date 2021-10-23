@@ -6,4 +6,8 @@ data class Pizza(
     val description: String,
     val imageUrl: String,
     val price: Double
-)
+) {
+    companion object {
+        const val ID_FIELD = "id"
+    }
+}
