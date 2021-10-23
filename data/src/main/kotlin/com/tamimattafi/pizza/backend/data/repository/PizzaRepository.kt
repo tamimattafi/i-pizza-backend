@@ -4,10 +4,13 @@ import com.tamimattafi.pizza.backend.data.local.dao.IPizzaDao
 import com.tamimattafi.pizza.backend.data.local.entity.PizzaConverter
 import com.tamimattafi.pizza.backend.domain.model.Pizza
 import com.tamimattafi.pizza.backend.domain.repository.IPizzaRepository
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
+import org.springframework.stereotype.Repository
 
-class PizzaRepository(
+@Repository
+class PizzaRepository @Autowired constructor(
     private val pizzaDao: IPizzaDao
 ) : IPizzaRepository {
 
