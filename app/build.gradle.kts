@@ -1,14 +1,3 @@
-plugins {
-    id("org.springframework.boot") version "2.5.6"
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm") version "1.5.31"
-    kotlin("plugin.spring") version "1.5.31"
-}
-
-group = "com.tamimattafi.pizza.backend"
-version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_16
-
 dependencies {
     //SPRING BOOT
     implementation("org.springframework.boot:spring-boot-starter-security:2.5.5")
@@ -37,15 +26,5 @@ dependencies {
 dependencyManagement {
     imports {
         mavenBom("org.springframework.boot.experimental:spring-boot-bom-r2dbc:0.1.0.M3")
-    }
-}
-
-tasks.create("prepareKotlinBuildScriptModel") {
-    //workaround to fix build error in gradle 7.0
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "16"
     }
 }
