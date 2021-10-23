@@ -16,6 +16,9 @@ subprojects {
   apply(plugin = "org.jetbrains.kotlin.jvm")
 	apply(plugin = "org.jetbrains.kotlin.plugin.spring")
 
+	group = "com.tamimattafi.pizza.backend"
+	version = "0.0.1-SNAPSHOT"
+
 	repositories {
 		mavenCentral()
 		maven(url = "https://repo.spring.io/milestone")
@@ -27,7 +30,7 @@ subprojects {
 
 	tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 		kotlinOptions {
-			jvmTarget = "16"
+			jvmTarget = "1.8"
 		}
 	}
 }
