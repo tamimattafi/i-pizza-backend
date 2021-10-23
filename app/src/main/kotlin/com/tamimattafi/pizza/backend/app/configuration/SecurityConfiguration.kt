@@ -1,4 +1,4 @@
-package com.tamimattafi.pizza.backend.configuration
+package com.tamimattafi.pizza.backend.app.configuration
 
 import org.springframework.context.ApplicationContextAware
 import org.springframework.context.annotation.Configuration

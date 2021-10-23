@@ -5,6 +5,10 @@ plugins {
     kotlin("plugin.spring") version "1.5.31"
 }
 
+group = "com.tamimattafi.pizza.backend"
+version = "0.0.1-SNAPSHOT"
+java.sourceCompatibility = JavaVersion.VERSION_16
+
 dependencies {
     //SPRING BOOT
     implementation("org.springframework.boot:spring-boot-starter-security:2.5.5")

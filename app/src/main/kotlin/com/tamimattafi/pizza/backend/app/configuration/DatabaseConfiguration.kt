@@ -1,4 +1,4 @@
-package com.tamimattafi.pizza.backend.configuration
+package com.tamimattafi.pizza.backend.app.configuration
 
 import dev.miku.r2dbc.mysql.MySqlConnectionConfiguration
 import dev.miku.r2dbc.mysql.MySqlConnectionFactory
