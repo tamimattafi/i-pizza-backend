@@ -1,3 +1,13 @@
+plugins {
+    id("org.springframework.boot")
+    id("io.spring.dependency-management")
+    kotlin("plugin.spring")
+}
+
+group = "com.tamimattafi.pizza.backend"
+version = "0.0.1-SNAPSHOT"
+java.targetCompatibility = JavaVersion.VERSION_16
+
 dependencies {
     //SPRING BOOT
     implementation("org.springframework.boot:spring-boot-starter-security:2.5.5")
@@ -8,10 +18,6 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-    //СO-ROUTINES
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.5.2")
 
     //MYSQL
     implementation("dev.miku:r2dbc-mysql:0.8.2.RELEASE")
